@@ -3,5 +3,5 @@ Ce repertoire contient les travaux du sujet: https://mubizinc.github.io/smart-co
 
 Membres du groupe:
 
-Jacques-Olivier PONGO EKOUM - jacques-olivier.pongo_ekoum@devinci.fr
-Yanis DACI - yanis.daci@devinci.fr
+-Jacques-Olivier PONGO EKOUM - jacques-olivier.pongo_ekoum@devinci.fr
+-Yanis DACI - yanis.daci@devinci.fr
