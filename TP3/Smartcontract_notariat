@@ -1,0 +1,39 @@
+pragma solidity ^0.4.16;
+
+contract Authenticity {
+    
+    // VARIABLES
+    string public hash;
+    
+    address public admin;
+
+    
+    // MODIFIER
+    modifier isadmin(){
+        if(msg.sender!=admin){
+            throw;
+            _;
+        }
+    }
+        
+
+    //Function      
+    function Authenticity(string _hash) 
+    {
+        admin=msg.sender;
+            
+        hash=_hash;
+            
+    }
+    
+        
+    
+
+    // KILL
+    function kill() isadmin() public {
+        
+        delete admin;
+        selfdestruct(msg.sender);
+    }
+    
+}
