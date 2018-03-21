@@ -10,6 +10,10 @@ contract SystemeVote_Hotel {
     string  public commentof;
     string erreur="Erreur, veuillez entrer un index correct";
     
+    //Time
+    uint public end;
+    
+    
     //Struct
     struct Vote {
         uint grade;
@@ -33,11 +37,15 @@ contract SystemeVote_Hotel {
 
     //function      
     
-    function SystemeVote_Hotel() {
+    function SystemeVote_Hotel(uint _end) {
+        require(_end>0);
         owner = msg.sender;
+        end=now+_end*1 minutes;
+        
     }
     
     function PostVote (string comment_,uint grade_) public isGoodGrade(grade_)  {
+        require(end>now);
         Votes.push( Vote({
                     Voter_address : msg.sender,
                     grade : grade_,
